@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@import "../fonts/fonts.css";
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #EFF6FF;
+    font-family: "Barlow";
+    margin: 0;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 100%;
+}
