@@ -10,10 +10,338 @@ body {
 body {
     background-color: #EFF6FF;
     font-family: "Barlow";
+    color: #2A4A5C;
     margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+a {
+    color: #3698FB;
 }
 
 .wrapper {
     position: relative;
     min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 30px rgba(120, 120, 120, 0.1);
+    max-width: 1440px;
+    width: 100%;
+    position: relative;
+}
+
+.column {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+.column.left {
+    max-width: 760px;
+}
+.column.right {
+    max-width: 680px;
+}
+
+.logo {
+    position: absolute;
+    top: 44px;
+    left: 50px;
+}
+.logo a,
+.logo img {
+    display: block;
+}
+.logo img {
+    width: 140px;
+}
+
+img.poster {
+    display: block;
+    width: 100%;
+}
+
+.sign-form {
+    padding: 75px;
+    box-sizing: border-box;
+    height: 850px;
+}
+.sign-form  h1,
+.sign-form  h2 {
+    color: #7B8A92;
+}
+.sign-form  h3,
+.sign-form  h4 {
+    color: #96A5B1;
+}
+
+.social-buttons {
+    list-style: none;
+    padding: 0;
+    margin: 50px 0;
+}
+.social-buttons li {
+    float: left;
+    padding-left: 30px;
+}
+.social-buttons li:first-child {
+    padding-left: 0;
+}
+.social-buttons li a {
+    display: block;
+    width: 250px;
+    padding: 12px 40px;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+}
+.social-buttons .icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 10px;
+    margin-top: -10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.social-buttons .fb {
+    background-color: #255A9B;
+}
+.social-buttons .fb .icon {
+    background-image: url("../img/facebook.svg");
+}
+.social-buttons .in {
+    background-color: #0076B6;
+}
+.social-buttons .in .icon {
+    background-image: url("../img/linkedin.svg");
+}
+.social-buttons::after {
+    content: ".";
+    display: block;
+    line-height: 0;
+    font-size: 0;
+    clear: both;
+}
+
+.or-sep {
+    margin: 50px 0;
+    padding: 0 105px;
+    text-align: center;
+}
+.or-sep span {
+    display: inline-block;
+    position: relative;
+    padding: 0 5px;
+}
+.or-sep span::before,
+.or-sep span::after {
+    content: ".";
+    line-height: 0;
+    font-size: 0;
+    width: 105px;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.5px;
+    background-color: #E5E5E5;
+}
+.or-sep span::before {
+    right: 100%;
+}
+.or-sep span::after {
+    left: 100%;
+}
+
+.register-form {
+    margin: 50px 0;
+}
+
+.input-text-group {
+    list-style: none;
+    padding: 0;
+    margin: 50px 0;
+}
+.input-text-group::after {
+    content: ".";
+    display: block;
+    line-height: 0;
+    font-size: 0;
+    clear: both;
+}
+.input-text-group li {
+    float: left;
+    width: 250px;
+    margin-left: 30px;
+    position: relative;
+}
+.input-text-group li:first-child {
+    margin-left: 0;
+}
+.input-text-group li input {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 30px 10px 10px 10px;
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-family: "Barlow";
+    font-size: inherit;
+    outline: none;
+}
+.input-text-group li input:focus {
+    border-left-color: #3698FB;
+    border-radius: 0 3px 3px 0;
+}
+.input-text-group li label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 8px 11px;
+    color: #AFAFAF;
+}
+
+.input-radio-group {
+    list-style: none;
+    padding: 0;
+    margin: 50px 0 100px 0;
+}
+.input-radio-group li {
+    display: inline-block;
+    margin: 0 30px 50px 0;
+}
+.input-radio-group li > * {
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+.input-radio-group li input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    position: relative;
+}
+.input-radio-group li input[type="radio"]::after {
+    content: ".";
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2px solid #EEEEEE;
+    border-radius: 100%;
+    box-sizing: border-box;
+}
+.input-radio-group li input[type="radio"]:checked:after {
+    border-color: #3698FB;
+    border-width: 4px;
+}
+.input-radio-group li label {
+    margin: 0 5px;
+}
+
+.check-agree {
+    margin: 50px 0;
+    color: #AFAFAF;
+}
+.check-agree > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+.check-agree input[type="checkbox"] {
+    appearance: none;
+    margin-left: 0;
+    outline: none;
+    position: relative;
+    width: 14px;
+    height: 14px;
+}
+.check-agree input[type="checkbox"]::after {
+    content: ".";
+    display: block;
+    position: absolute;
+    line-height: 0;
+    font-size: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    border: 1px solid #EEEEEE;
+}
+.check-agree input[type="checkbox"]:checked::after {
+    content: ".";
+    background-color: #3698FB;
+    border-color: #3698FB;
+    box-shadow: 1px 1px 0 #FFFFFF inset, -1px -1px 0 #FFFFFF inset;
+}
+
+.submit {
+    background-color: #3698FB;
+    border-radius: 5px;
+    border: none;
+    width: 250px;
+    padding: 12px;
+    font-family: "Barlow";
+    font-weight: bold;
+    font-size: inherit;
+    color: #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+}
+
+.clue {
+    position: relative;
+    width: 12px;
+    height: 12px;
+}
+.clue::after {
+    content: ".";
+    display: block;
+    line-height: 0;
+    font-size: 0;
+    background: url("../img/info_icon.svg") 0 0 no-repeat;
+    background-size: contain;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.clue .mess {
+    position: absolute;
+    top: 36px;
+    right: -8px;
+    padding: 14px;
+    color: #AFAFAF;
+    width: 275px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 20px rgba(120, 120, 120, 0.1);
+    border-radius: 5px;
+    display: none;
+}
+.clue:hover .mess {
+    display: block;
 }
