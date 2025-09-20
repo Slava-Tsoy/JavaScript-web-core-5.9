@@ -1,6 +1,6 @@
 # Задание по верстке
 
-- ![Template](/template.jpg)
+![Template](/template.jpg)
 
 ### Результат
 
