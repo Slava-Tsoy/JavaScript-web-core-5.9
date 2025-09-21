@@ -27,6 +27,7 @@ a {
     color: #3698FB;
 }
 
+/* ***** General Wrapper ***** */
 .wrapper {
     position: relative;
     min-height: 100%;
@@ -35,6 +36,7 @@ a {
     justify-content: center;
 }
 
+/* ***** Main Container ***** */
 .main {
     background-color: #FFFFFF;
     box-shadow: 0 0 30px rgba(120, 120, 120, 0.1);
@@ -53,12 +55,14 @@ a {
     max-width: 680px;
 }
 
+/* ***** Poster Container ***** */
 .poster {
     background: url("../img/bg.jpg") 50% 50% no-repeat;
     background-size: cover;
     min-height: 100%;
 }
 
+/* ***** Logo Container ***** */
 .logo {
     position: absolute;
     top: 44px;
@@ -72,6 +76,7 @@ a {
     height: 30px;
 }
 
+/* ***** Form Container ***** */
 .section-form {
     display: flex;
     align-items: center;
@@ -79,6 +84,7 @@ a {
     min-height: 1000px;
 }
 
+/* ***** Form Inner Container ***** */
 .sign-form {
     padding: 30px;
     min-height: 100%;
@@ -93,10 +99,11 @@ a {
     color: #96A5B1;
 }
 
+/* ***** Social Button Bar ***** */
 .social-buttons {
     list-style: none;
     padding: 0;
-    margin: 35px 0 35px -15px;
+    margin: 35px -15px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -144,9 +151,10 @@ a {
     clear: both;
 }
 
+/* ***** Separator ***** */
 .or-sep {
     margin: 35px 0;
-    padding: 0 105px;
+    padding: 0 135px;
     text-align: center;
 }
 .or-sep span {
@@ -173,14 +181,16 @@ a {
     left: 100%;
 }
 
+/* ***** Element Form ***** */
 .register-form {
     margin: 35px 0;
 }
 
+/* ***** Input Type:Text Bar ***** */
 .input-text-group {
     list-style: none;
     padding: 0;
-    margin: 35px 0 35px -15px;
+    margin: 35px -15px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -218,29 +228,32 @@ a {
     color: #AFAFAF;
 }
 
+/* ***** Input Type:Radio Bar ***** */
 .input-radio-group {
     list-style: none;
     padding: 0;
-    margin: 35px 0 135px -15px;
+    margin: 35px -15px 135px -15px;
     display: flex;
     flex-wrap: wrap;
 }
 .input-radio-group li {
     margin: 15px;
+    display: flex;
+    align-items: center;
 }
-.input-radio-group li > * {
-    margin: 0;
-    display: inline-block;
-    vertical-align: middle;
+.input-radio-group .radio-label {
+    display: flex;
+    align-items: center;
 }
-.input-radio-group li input[type="radio"] {
+.input-radio-group .radio-label input[type="radio"] {
     width: 18px;
     height: 18px;
     appearance: none;
     position: relative;
     outline: none;
+    margin: 0;
 }
-.input-radio-group li input[type="radio"]::after {
+.input-radio-group .radio-label input[type="radio"]::after {
     content: ".";
     display: block;
     font-size: 0;
@@ -254,78 +267,18 @@ a {
     border-radius: 100%;
     box-sizing: border-box;
 }
-.input-radio-group li:hover input[type="radio"]::after {
+.input-radio-group .radio-label:hover input[type="radio"]::after {
     border-color: #AAAAAA;
 }
-.input-radio-group li input[type="radio"]:checked:after {
+.input-radio-group .radio-label input[type="radio"]:checked:after {
     border-color: #3698FB;
     border-width: 4px;
 }
-.input-radio-group li label {
-    margin: 0 5px;
+.input-radio-group .radio-label label {
+    margin: 0 6px 0 12px;
 }
 
-.agree {
-    margin: 45px 0;
-    color: #AFAFAF;
-}
-.agree .check,
-.agree .view {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 5px 0;
-}
-.agree .check > * {
-    vertical-align: middle;
-}
-.agree .check input[type="checkbox"] {
-    appearance: none;
-    margin: 0;
-    outline: none;
-    position: relative;
-    width: 14px;
-    height: 14px;
-}
-.agree .check input[type="checkbox"]::after {
-    content: ".";
-    display: block;
-    position: absolute;
-    line-height: 0;
-    font-size: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    box-sizing: border-box;
-    border: 1px solid #EEEEEE;
-}
-.agree .check:hover input[type="checkbox"]::after {
-    border-color: #AAAAAA;
-}
-.agree .check input[type="checkbox"]:checked::after {
-    content: ".";
-    background-color: #3698FB;
-    border-color: #3698FB;
-    box-shadow: 1px 1px 0 #FFFFFF inset, -1px -1px 0 #FFFFFF inset;
-}
-
-.submit {
-    background-color: #3698FB;
-    border-radius: 5px;
-    border: none;
-    width: 250px;
-    padding: 12px;
-    font-family: "Barlow";
-    font-weight: bold;
-    font-size: inherit;
-    color: #FFFFFF;
-    text-align: center;
-    cursor: pointer;
-}
-.submit:hover {
-    background-color: #2087ef;
-}
-
+/* ***** Popup Message ***** */
 .clue {
     position: relative;
     width: 12px;
@@ -348,6 +301,7 @@ a {
 }
 .clue .mess {
     position: absolute;
+    z-index: 100;
     top: 36px;
     right: -8px;
     padding: 14px;
@@ -363,4 +317,103 @@ a {
 }
 .clue:hover::after {
     opacity: 0.8;
+}
+
+/* ***** Agree Check Panel ***** */
+.agree {
+    margin: 45px 0;
+    color: #AFAFAF;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.agree .check,
+.agree .view {
+    margin: 5px 0;
+}
+.agree .check {
+    display: flex;
+}
+.agree .check label {
+    margin: 0 5px 0 10px;
+}
+.agree .check input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+    outline: none;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    min-width: 15px;
+    min-height: 15px;
+}
+.agree .check input[type="checkbox"]::after {
+    content: ".";
+    display: block;
+    position: absolute;
+    line-height: 0;
+    font-size: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    border: 1px solid #EEEEEE;
+}
+.agree .check:hover input[type="checkbox"]::after {
+    border-color: #AAAAAA;
+}
+.agree .check input[type="checkbox"]:checked::after {
+    background-color: #3698FB;
+    border-color: #3698FB;
+    box-shadow: 1px 1px 0 #FFFFFF inset, -1px -1px 0 #FFFFFF inset;
+}
+
+/* ***** Submit Panel ***** */
+.submit {
+    margin: 35px 0;
+    display: flex;
+}
+.submit button {
+    background-color: #3698FB;
+    border-radius: 5px;
+    border: none;
+    width: 250px;
+    padding: 12px;
+    font-family: "Barlow";
+    font-weight: bold;
+    font-size: inherit;
+    color: #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+}
+.submit button:hover {
+    background-color: #2087ef;
+}
+
+/* ###### Responsive Styles ###### */
+
+@media all and (max-width: 1180px) {
+    .social-buttons,
+    .input-text-group,
+    .agree,
+    .submit {
+        justify-content: center;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .input-radio-group {
+        display: block;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .main {
+        display: block;
+    }
+    .poster {
+        height: 118px;
+        background-position: 0 15%;
+    }
 }
