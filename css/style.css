@@ -38,21 +38,25 @@ a {
 .main {
     background-color: #FFFFFF;
     box-shadow: 0 0 30px rgba(120, 120, 120, 0.1);
+    width: 100%;
     max-width: 1440px;
+    display: flex;
+}
+.main .col {
     width: 100%;
     position: relative;
 }
-
-.column {
-    float: left;
-    width: 100%;
-    height: 100%;
-}
-.column.left {
+.main .col.cl {
     max-width: 760px;
 }
-.column.right {
+.main .col.cr {
     max-width: 680px;
+}
+
+.poster {
+    background: url("../img/bg.jpg") 50% 50% no-repeat;
+    background-size: cover;
+    min-height: 100%;
 }
 
 .logo {
@@ -60,23 +64,25 @@ a {
     top: 44px;
     left: 50px;
 }
-.logo a,
-.logo img {
+.logo a {
     display: block;
-}
-.logo img {
+    background: url("../img/logo.svg") 0 0 no-repeat;
+    background-size: contain;
     width: 140px;
+    height: 30px;
 }
 
-img.poster {
-    display: block;
-    width: 100%;
+.section-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1000px;
 }
 
 .sign-form {
-    padding: 75px;
+    padding: 30px;
+    min-height: 100%;
     box-sizing: border-box;
-    height: 850px;
 }
 .sign-form  h1,
 .sign-form  h2 {
@@ -90,14 +96,12 @@ img.poster {
 .social-buttons {
     list-style: none;
     padding: 0;
-    margin: 50px 0;
+    margin: 35px 0 35px -15px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .social-buttons li {
-    float: left;
-    padding-left: 30px;
-}
-.social-buttons li:first-child {
-    padding-left: 0;
+    padding: 15px;
 }
 .social-buttons li a {
     display: block;
@@ -141,7 +145,7 @@ img.poster {
 }
 
 .or-sep {
-    margin: 50px 0;
+    margin: 35px 0;
     padding: 0 105px;
     text-align: center;
 }
@@ -170,29 +174,20 @@ img.poster {
 }
 
 .register-form {
-    margin: 50px 0;
+    margin: 35px 0;
 }
 
 .input-text-group {
     list-style: none;
     padding: 0;
-    margin: 50px 0;
-}
-.input-text-group::after {
-    content: ".";
-    display: block;
-    line-height: 0;
-    font-size: 0;
-    clear: both;
+    margin: 35px 0 35px -15px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .input-text-group li {
-    float: left;
     width: 250px;
-    margin-left: 30px;
+    margin: 15px;
     position: relative;
-}
-.input-text-group li:first-child {
-    margin-left: 0;
 }
 .input-text-group li input {
     display: block;
@@ -205,6 +200,10 @@ img.poster {
     font-family: "Barlow";
     font-size: inherit;
     outline: none;
+    cursor: default;
+}
+.input-text-group li input:hover {
+    border-color: #AAAAAA;
 }
 .input-text-group li input:focus {
     border-left-color: #3698FB;
@@ -222,11 +221,12 @@ img.poster {
 .input-radio-group {
     list-style: none;
     padding: 0;
-    margin: 50px 0 100px 0;
+    margin: 35px 0 135px -15px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .input-radio-group li {
-    display: inline-block;
-    margin: 0 30px 50px 0;
+    margin: 15px;
 }
 .input-radio-group li > * {
     margin: 0;
@@ -238,6 +238,7 @@ img.poster {
     height: 18px;
     appearance: none;
     position: relative;
+    outline: none;
 }
 .input-radio-group li input[type="radio"]::after {
     content: ".";
@@ -253,6 +254,9 @@ img.poster {
     border-radius: 100%;
     box-sizing: border-box;
 }
+.input-radio-group li:hover input[type="radio"]::after {
+    border-color: #AAAAAA;
+}
 .input-radio-group li input[type="radio"]:checked:after {
     border-color: #3698FB;
     border-width: 4px;
@@ -261,23 +265,28 @@ img.poster {
     margin: 0 5px;
 }
 
-.check-agree {
-    margin: 50px 0;
+.agree {
+    margin: 45px 0;
     color: #AFAFAF;
 }
-.check-agree > * {
+.agree .check,
+.agree .view {
     display: inline-block;
     vertical-align: middle;
+    margin: 5px 0;
 }
-.check-agree input[type="checkbox"] {
+.agree .check > * {
+    vertical-align: middle;
+}
+.agree .check input[type="checkbox"] {
     appearance: none;
-    margin-left: 0;
+    margin: 0;
     outline: none;
     position: relative;
     width: 14px;
     height: 14px;
 }
-.check-agree input[type="checkbox"]::after {
+.agree .check input[type="checkbox"]::after {
     content: ".";
     display: block;
     position: absolute;
@@ -290,7 +299,10 @@ img.poster {
     box-sizing: border-box;
     border: 1px solid #EEEEEE;
 }
-.check-agree input[type="checkbox"]:checked::after {
+.agree .check:hover input[type="checkbox"]::after {
+    border-color: #AAAAAA;
+}
+.agree .check input[type="checkbox"]:checked::after {
     content: ".";
     background-color: #3698FB;
     border-color: #3698FB;
@@ -309,6 +321,9 @@ img.poster {
     color: #FFFFFF;
     text-align: center;
     cursor: pointer;
+}
+.submit:hover {
+    background-color: #2087ef;
 }
 
 .clue {
@@ -329,6 +344,7 @@ img.poster {
     right: 0;
     bottom: 0;
     left: 0;
+    cursor: pointer;
 }
 .clue .mess {
     position: absolute;
@@ -344,4 +360,7 @@ img.poster {
 }
 .clue:hover .mess {
     display: block;
+}
+.clue:hover::after {
+    opacity: 0.8;
 }
