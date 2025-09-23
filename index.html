@@ -31,11 +31,11 @@
                             <ul class="input-text-group">
                                 <li>
                                     <label for="email">Email</label>
-                                    <input type="email" name="Email" id="email">
+                                    <input type="email" name="Email" id="email" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
                                 </li>
                                 <li>
                                     <label for="phone">Phone</label>
-                                    <input type="tel" name="Phone" id="phone">
+                                    <input type="tel" name="Phone" id="phone" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                 </li>
                             </ul>
                             <h2>What type of investor are you?</h2>
